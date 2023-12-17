@@ -6,22 +6,9 @@ function isNumber(char) {
 
 let total = 0;
 for (let code of input) {
-    let joinedNumber = "";
-    for (let x = 0; x < code.length; x++) {
-        if (isNumber(code[x])) {
-            joinedNumber += code[x];
-            break;
-        }
-    }
-
-    for (let x = code.length-1; x >= 0; x--) {
-        if (isNumber(code[x])) {
-            joinedNumber += code[x];
-            break;
-        }
-    }
-
-    total += parseInt(joinedNumber, 10);
+    const numbers = code.split("").filter(c => !isNaN(c));
+    const numberFromCode = numbers[0] + numbers[numbers.length-1];
+    total += parseInt(numberFromCode, 10);
 }
 
 console.log(total);
