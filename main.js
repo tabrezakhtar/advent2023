@@ -20,5 +20,5 @@ for (let code of input) {
     const numberFromCode = numbers[0] + numbers[numbers.length-1];
     total += parseInt(numberFromCode, 10);
 }
-
+console.log("test");
 console.log(total);
